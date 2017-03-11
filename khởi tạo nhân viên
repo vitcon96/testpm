@@ -1,0 +1,84 @@
+namespace DTO
+{
+    public class DTO_Nhanvien
+    {
+        private string manv;
+        public string _MaNhanVien
+        {
+            get { return manv; }
+            set { manv = value; }         
+        }
+        private string hoten;
+        public string _HoTen
+        {
+            get { return hoten; }
+            set { hoten = value; }
+        }
+        private string ngaysinh;
+        public string _NgaySinh
+        {
+            get { return ngaysinh; }
+            set { ngaysinh = value; }
+        }
+        private string diachi;
+        public string _DiaChi
+        {
+            get { return diachi; }
+            set { diachi = value; }
+        }
+        private string gioitinh;
+        public string _GioiTinh
+        {
+            get { return gioitinh; }
+            set { gioitinh = value; }
+        }
+        private string quequan;
+        public string _QueQuan
+        {
+            get { return quequan; }
+            set { quequan = value; }
+        }
+        private string socmt;
+        public string _Socmt
+        {
+            get { return socmt; }
+            set { socmt = value; }
+        }
+        private string dienthoai;
+        public string _DienThoai
+        {
+            get { return dienthoai; }
+            set { dienthoai = value; }
+        }
+        private string email;
+        public string _Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        private string macv;
+        public string _Macv
+        {
+            get { return macv; }
+            set { macv = value; }
+        }
+        private string matrdhv;
+        public string _Matrdhv
+        {
+            get { return matrdhv; }
+            set { matrdhv = value; }
+        }
+        private string bacluong;
+        public string _Bacluong
+        {
+            get { return bacluong; }
+            set { bacluong = value; }
+        }
+        private string mapb;
+        public string _Mapb
+        {
+            get { return mapb; }
+            set { mapb = value; }
+        }
+    }
+}
