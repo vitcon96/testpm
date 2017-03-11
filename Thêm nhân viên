@@ -1,0 +1,122 @@
+
+// trong lớp data
+namespace DAL
+{
+    public class SQL_NhanVien
+    {
+        KetNoiDT cn = new KetNoiDT(); // đã sửa
+        //hàm thêm dl
+        public void Them(DTO_Nhanvien nhanvien)
+        {
+            cn.ThucThiCauLenhSQL(@"INSERT INTO NHANVIEN (manv, ngaysinh, hoten, gioitinh, mapb, matrdhv, macv, bacluong, email, dienthoai, socmt, diachi, quequan)VALUES(N'" + nhanvien._MaNhanVien + "',N'" + nhanvien._NgaySinh + "',N'" + nhanvien._HoTen + "',N'" + nhanvien._GioiTinh + "',N'" + nhanvien._Mapb + "',N'" + nhanvien._Matrdhv + "',N'" + nhanvien._Macv + "',N'" + nhanvien._Bacluong + "',N'" + nhanvien._Email + "',N'" + nhanvien._DienThoai + "',N'" + nhanvien._Socmt + "',N'" + nhanvien._DiaChi + "',N'" + nhanvien._QueQuan + "')");
+        }
+        public DataTable TaoBang(string dieukien)
+        {
+            return cn.GetDataTable(@"select *from NHANVIEN" + dieukien); // đã sửa 
+        }
+    }
+}
+// khởi tạo đối tượng
+namespace DTO
+{
+    public class DTO_Nhanvien
+    {
+        private string manv;
+        public string _MaNhanVien
+        {
+            get { return manv; }
+            set { manv = value; }         
+        }
+        private string hoten;
+        public string _HoTen
+        {
+            get { return hoten; }
+            set { hoten = value; }
+        }
+        private string ngaysinh;
+        public string _NgaySinh
+        {
+            get { return ngaysinh; }
+            set { ngaysinh = value; }
+        }
+        private string diachi;
+        public string _DiaChi
+        {
+            get { return diachi; }
+            set { diachi = value; }
+        }
+        private string gioitinh;
+        public string _GioiTinh
+        {
+            get { return gioitinh; }
+            set { gioitinh = value; }
+        }
+        private string quequan;
+        public string _QueQuan
+        {
+            get { return quequan; }
+            set { quequan = value; }
+        }
+        private string socmt;
+        public string _Socmt
+        {
+            get { return socmt; }
+            set { socmt = value; }
+        }
+        private string dienthoai;
+        public string _DienThoai
+        {
+            get { return dienthoai; }
+            set { dienthoai = value; }
+        }
+        private string email;
+        public string _Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        private string macv;
+        public string _Macv
+        {
+            get { return macv; }
+            set { macv = value; }
+        }
+        private string matrdhv;
+        public string _Matrdhv
+        {
+            get { return matrdhv; }
+            set { matrdhv = value; }
+        }
+        private string bacluong;
+        public string _Bacluong
+        {
+            get { return bacluong; }
+            set { bacluong = value; }
+        }
+        private string mapb;
+        public string _Mapb
+        {
+            get { return mapb; }
+            set { mapb = value; }
+        }
+    }
+}
+// tạo BUS
+namespace BUS
+{
+    public class BUS_NhanVien
+    {
+        SQL_NhanVien sql = new SQL_NhanVien();
+        //hàm thêm dữ liệu
+        public void ThemDL(DTO_Nhanvien nhanvien)
+        {
+            sql.Them(nhanvien);
+        }
+       
+        //hàm lấy dữ liệu
+        public DataTable TaoBang(string dieukien)
+        {
+            return sql.TaoBang(dieukien);
+        }
+    }
+}
